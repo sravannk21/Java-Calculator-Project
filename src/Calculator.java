@@ -2,6 +2,7 @@ import java.awt.Color;
 import java.awt.Font;
 
 import javax.swing.BorderFactory;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
@@ -28,6 +29,28 @@ public class Calculator {
 		displayBox.setOpaque(true);
 		//code to add display box to the JFrame
 		jf.add(displayBox);
+		
+		//digits of calulator
+		JButton numberSeven=new JButton("7");
+		numberSeven.setBounds(50, 210, 130, 130);
+		numberSeven.setFont(new Font("Arial", Font.PLAIN, 90));
+		numberSeven.setBorderPainted(false);
+		//code to add number seven to JFrame
+		jf.add(numberSeven);
+		
+		JButton numberEight=new JButton("8");
+		numberEight.setBounds(210, 210, 130, 130);
+		numberEight.setFont(new Font("Arial", Font.PLAIN, 90));
+		numberEight.setBorderPainted(false);
+		//code to add number seven to JFrame
+		jf.add(numberEight);
+		
+		JButton numberNine=new JButton("9");
+		numberNine.setBounds(370, 210, 130, 130);
+		numberNine.setFont(new Font("Arial", Font.PLAIN, 90));
+		numberNine.setBorderPainted(false);
+		//code to add number seven to JFrame
+		jf.add(numberNine);
 	}
 	
 	//main function starts here
