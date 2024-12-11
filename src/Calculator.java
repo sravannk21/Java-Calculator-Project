@@ -11,17 +11,8 @@ import javax.swing.SwingConstants;
 
 public class Calculator implements ActionListener {
 	JLabel displayBox;
-	JButton numberSeven;
-	JButton numberEight;
-	JButton numberNine;
-	JButton numberFour;
-	JButton numberFive;
-	JButton numberSix;
-	JButton numberOne;
-	JButton numberTwo;
-	JButton numberThree;
-	JButton dotButton;
-	JButton numberZero;
+	JButton numberSeven,numberEight,numberNine,numberFour,numberFive,
+	numberSix,numberOne,numberTwo;,numberThree,dotButton,numberZero;
 	
 	//initialize jframe class to create window to run calculator
 	Calculator(){
@@ -33,7 +24,7 @@ public class Calculator implements ActionListener {
 		jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		//outputdisplay to the user using jlabel class
-		displayBox=new JLabel("Hello");
+		displayBox=new JLabel();
 		displayBox.setBackground(Color.gray);
 		displayBox.setForeground(Color.white);
 		displayBox.setFont(new Font("Arial", Font.PLAIN, 90));
@@ -184,34 +175,37 @@ public class Calculator implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource()==numberSeven) {
-			displayBox.setText("7");
+			displayBox.setText(displayBox.getText()+"7");
 		}
 		else if(e.getSource()==numberEight) {
-			displayBox.setText("8");
+			displayBox.setText(displayBox.getText()+"8");
 		}
 		else if(e.getSource()==numberNine) {
-			displayBox.setText("9");
+			displayBox.setText(displayBox.getText()+"9");
 		}
 		else if(e.getSource()==numberSix) {
-			displayBox.setText("6");
+			displayBox.setText(displayBox.getText()+"6");
 		}
 		else if(e.getSource()==numberFive) {
-			displayBox.setText("5");
+			displayBox.setText(displayBox.getText()+"5");
 		}
 		else if(e.getSource()==numberFour) {
-			displayBox.setText("4");
+			displayBox.setText(displayBox.getText()+"4");
 		}
 		else if(e.getSource()==numberThree) {
-			displayBox.setText("3");
+			displayBox.setText(displayBox.getText()+"3");
 		}
 		else if(e.getSource()==numberTwo) {
-			displayBox.setText("2");
+			displayBox.setText(displayBox.getText()+"2");
 		}
 		else if(e.getSource()==numberOne) {
-			displayBox.setText("1");
+			displayBox.setText(displayBox.getText()+"1");
+		}
+		else if(e.getSource()==numberZero) {
+			displayBox.setText(displayBox.getText()+"0");
 		}
 		else if(e.getSource()==dotButton) {
-			displayBox.setText(".");
+			displayBox.setText(displayBox.getText()+".");
 		}
 		else if(e.getSource()==numberZero) {
 			displayBox.setText("0");
