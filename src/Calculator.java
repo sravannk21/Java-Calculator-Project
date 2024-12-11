@@ -13,7 +13,7 @@ public class Calculator {
 	Calculator(){
 		JFrame jf=new JFrame("Calculator");
 		jf.setLayout(null);
-		jf.setSize(1000,1200);
+		jf.setSize(720,1000);
 		jf.setVisible(true);
 		jf.setLocation(200,250);
 		jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -25,7 +25,7 @@ public class Calculator {
 		displayBox.setFont(new Font("Arial", Font.PLAIN, 90));
 		displayBox.setBorder(BorderFactory.createEmptyBorder(20, 15, 20, 15));
 		displayBox.setHorizontalAlignment(SwingConstants.RIGHT);
-		displayBox.setBounds(50,50,900,110);
+		displayBox.setBounds(50,50,620,110);
 		displayBox.setOpaque(true);
 		//code to add display box to the JFrame
 		jf.add(displayBox);
@@ -96,6 +96,59 @@ public class Calculator {
 		numberThree.setBorderPainted(false);
 		//code to add number Three to JFrame
 		jf.add(numberThree);
+		
+		
+		//digits of calulator(.,0=)
+		JButton dotButton=new JButton(".");
+		dotButton.setBounds(50, 690, 130, 130);
+		dotButton.setFont(new Font("Arial", Font.PLAIN, 90));
+		dotButton.setBorderPainted(false);
+		//code to add dot button to JFrame
+		jf.add(dotButton);
+		
+		JButton numberZero=new JButton("0");
+		numberZero.setBounds(210, 690, 130, 130);
+		numberZero.setFont(new Font("Arial", Font.PLAIN, 90));
+		numberZero.setBorderPainted(false);
+		//code to add number zero to JFrame
+		jf.add(numberZero);
+		
+		JButton equalButton=new JButton("=");
+		equalButton.setBounds(370, 690, 130, 130);
+		equalButton.setFont(new Font("Arial", Font.PLAIN, 90));
+		equalButton.setBorderPainted(false);
+		//code to add equal button to JFrame
+		jf.add(equalButton);
+		
+		
+		//digits of operations
+		JButton divisionButton=new JButton("/");
+		divisionButton.setBounds(530, 210, 130, 130);
+		divisionButton.setFont(new Font("Arial", Font.PLAIN, 90));
+		divisionButton.setBorderPainted(false);
+		//code to add division button to JFrame
+		jf.add(divisionButton);
+		
+		JButton additionButton=new JButton("+");
+		additionButton.setBounds(530, 370, 130, 130);
+		additionButton.setFont(new Font("Arial", Font.PLAIN, 90));
+		additionButton.setBorderPainted(false);
+		//code to add addition button to JFrame
+		jf.add(additionButton);
+		
+		JButton subtractionButton=new JButton("-");
+		subtractionButton.setBounds(530, 530, 130, 130);
+		subtractionButton.setFont(new Font("Arial", Font.PLAIN, 90));
+		subtractionButton.setBorderPainted(false);
+		//code to add subtraction button to JFrame
+		jf.add(subtractionButton);
+		
+		JButton multiplictionButton=new JButton("*");
+		multiplictionButton.setBounds(530, 690, 130, 130);
+		multiplictionButton.setFont(new Font("Arial", Font.PLAIN, 90));
+		multiplictionButton.setBorderPainted(false);
+		//code to add subtraction button to JFrame
+		jf.add(multiplictionButton);
 	}
 	
 	//main function starts here
