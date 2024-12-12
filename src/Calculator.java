@@ -12,7 +12,7 @@ import javax.swing.SwingConstants;
 public class Calculator implements ActionListener {
 	//cheking any operator clicked?
 	boolean isOperatorClicked=false;
-	String oldValue;
+	String oldValue, operator;
 	JLabel displayBox;
 	//digits obects
 	JButton numberSeven,numberEight,numberNine,numberFour,numberFive,
@@ -312,26 +312,55 @@ public class Calculator implements ActionListener {
 		//operations
 		else if(e.getSource()==additionButton) {
 			oldValue=displayBox.getText();
+			operator="+";
 			isOperatorClicked=true;
 		}
 		else if(e.getSource()==subtractionButton) {
+			oldValue=displayBox.getText();
+			operator="-";
 			isOperatorClicked=true;
 			
 		}
 		else if(e.getSource()==multiplictionButton) {
+			oldValue=displayBox.getText();
+			operator="*";
 			isOperatorClicked=true;
 			
 		}
 		else if(e.getSource()==divisionButton) {
+			oldValue=displayBox.getText();
+			operator="/";
 			isOperatorClicked=true;
 			
 		}
+		
+		//all calculations done here
 		else if(e.getSource()==equalButton) {
 			String newValue=displayBox.getText();
-			float oldValueF=Float.parseFloat(oldValue);
-			float newValueF=Float.parseFloat(newValue);
-			float result=oldValueF+newValueF;
-			displayBox.setText(result+"");
+			if(operator=="-") {
+				float oldValueF=Float.parseFloat(oldValue);
+				float newValueF=Float.parseFloat(newValue);
+				float result=oldValueF-newValueF;
+				displayBox.setText(result+"");
+			}
+			else if(operator=="+") {
+				float oldValueF=Float.parseFloat(oldValue);
+				float newValueF=Float.parseFloat(newValue);
+				float result=oldValueF+newValueF;
+				displayBox.setText(result+"");
+			}
+			else if(operator=="*") {
+				float oldValueF=Float.parseFloat(oldValue);
+				float newValueF=Float.parseFloat(newValue);
+				float result=oldValueF*newValueF;
+				displayBox.setText(result+"");
+			}
+			else if(operator=="/") {
+				float oldValueF=Float.parseFloat(oldValue);
+				float newValueF=Float.parseFloat(newValue);
+				float result=oldValueF/newValueF;
+				displayBox.setText(result+"");
+			}
 		}
 		
 	}
