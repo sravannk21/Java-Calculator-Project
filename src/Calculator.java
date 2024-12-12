@@ -12,12 +12,13 @@ import javax.swing.SwingConstants;
 public class Calculator implements ActionListener {
 	//cheking any operator clicked?
 	boolean isOperatorClicked=false;
+	String oldValue;
 	JLabel displayBox;
 	//digits obects
 	JButton numberSeven,numberEight,numberNine,numberFour,numberFive,
 	numberSix,numberOne,numberTwo,numberThree,dotButton,numberZero;
 	//operators objects
-	JButton divisionButton,additionButton,subtractionButton,multiplictionButton,clearButton,backSpace;
+	JButton divisionButton,additionButton,subtractionButton,multiplictionButton,clearButton,backSpace,equalButton;
 	
 	//initialize jframe class to create window to run calculator
 	Calculator(){
@@ -134,10 +135,11 @@ public class Calculator implements ActionListener {
 		//code to add number zero to JFrame
 		jf.add(numberZero);
 		
-		JButton equalButton=new JButton("=");
+		equalButton=new JButton("=");
 		equalButton.setBounds(370, 690, 130, 130);
 		equalButton.setFont(new Font("Arial", Font.PLAIN, 90));
 		equalButton.setBorderPainted(false);
+		equalButton.addActionListener(this);
 		//code to add equal button to JFrame
 		jf.add(equalButton);
 		
@@ -309,6 +311,7 @@ public class Calculator implements ActionListener {
 		
 		//operations
 		else if(e.getSource()==additionButton) {
+			oldValue=displayBox.getText();
 			isOperatorClicked=true;
 		}
 		else if(e.getSource()==subtractionButton) {
@@ -322,6 +325,13 @@ public class Calculator implements ActionListener {
 		else if(e.getSource()==divisionButton) {
 			isOperatorClicked=true;
 			
+		}
+		else if(e.getSource()==equalButton) {
+			String newValue=displayBox.getText();
+			float oldValueF=Float.parseFloat(oldValue);
+			float newValueF=Float.parseFloat(newValue);
+			float result=oldValueF+newValueF;
+			displayBox.setText(result+"");
 		}
 		
 	}
